@@ -418,8 +418,9 @@ img {
 .poster:before {
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: 100% auto;
   display: block;
+  position: fixed;
   position: absolute;
   top: 0;
   left: 0;
@@ -431,7 +432,6 @@ img {
 
 @media screen and (min-width: 768px) {
   .poster:before {
-    position: fixed;
     background-attachment: fixed;
   }
 }
