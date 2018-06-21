@@ -418,7 +418,7 @@ img {
 .poster:before {
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: 100% auto;
   background-attachment: scroll;
   display: block;
   position: fixed;
