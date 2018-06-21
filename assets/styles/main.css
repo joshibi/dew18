@@ -420,7 +420,7 @@ img {
   background-position: center;
   background-size: cover;
   display: block;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -431,6 +431,7 @@ img {
 
 @media screen and (min-width: 768px) {
   .poster:before {
+    position: fixed;
     background-attachment: fixed;
   }
 }
