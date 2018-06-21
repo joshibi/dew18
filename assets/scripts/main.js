@@ -9,4 +9,4 @@ let getStatus = function(e) {
 
 window.addEventListener('online', getStatus);
 window.addEventListener('offline', getStatus);
-getStatus({ type: 'ready' });
+//getStatus({ type: 'ready' });
