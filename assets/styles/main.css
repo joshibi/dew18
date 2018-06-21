@@ -25,10 +25,11 @@ img {
   height: auto;
 }
 
-.online  .online-content { display: block; }
+/* .online  .online-content { display: block; }
 .offline .online-content { display: none; }
 .online  .offline-content { display: none; }
-.offline .offline-content { display: block; }
+.offline .offline-content { display: block; } */
+
 
 /* app */
 .container {
@@ -416,9 +417,8 @@ img {
 
 .poster:before {
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-position: center;
-  background-size: auto 100%;
+  background-size: cover;
   display: block;
   position: fixed;
   top: 0;
@@ -431,7 +431,7 @@ img {
 
 @media screen and (min-width: 768px) {
   .poster:before {
-    background-size: cover;
+    background-attachment: fixed;
   }
 }
 
