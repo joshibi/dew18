@@ -4,7 +4,7 @@
 
 body {
   background: #f0f0f0;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 300;
   line-height: 1.8;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
@@ -35,7 +35,7 @@ img {
 }
 
 .content {
-  margin: 40px;
+  margin: 20px;
 }
 
 .content > ul {
@@ -57,7 +57,14 @@ img {
   margin-right: 1em;
 }
 
+.content > ul > li small {
+  font-size: 16px;
+}
+
 @media screen and (min-width: 768px) {
+  .content {
+    margin: 40px;
+  }
   .content > ul > li {
     width: 50%;
     padding: 0 20px

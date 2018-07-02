@@ -1,0 +1,574 @@
+/* body 要素には全体に適用するスタイルを追加しておく */
+body {
+  /* 背景色*/
+  background-color: #fff
+
+  /* サンセリフ体を基本に、欧文はシステムフォント→Helvetica Neue→Arial、和文は游ゴシック体→ヒラギノ角ゴ→メイリオの順に */
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+
+  /* 文字間を1文字の5%くらい空ける */
+  letter-spacing: 0.05em;
+
+  /* 行間も少しゆったりとる */
+  line-height: 1.8;
+
+  /* 全角かな文字に対して字詰めを有効化 */
+  font-feature-settings: 'pkna';
+}
+
+/* PC (ウインドウ幅 768px 以上) の場合はこの {} 内に記述する  */
+@media screen and (min-width: 768px) {
+  body {
+    /* PCの場合はデフォルトのフォントサイズを少し大きめにする */
+    font-size: 18px;
+  }
+}
+
+/* 見出し要素の行間は少し狭くしておく */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* 画像は親要素の幅をを超えないようにしておく */
+img {
+  /* 最大幅を 100% に */
+  max-width: 100%;
+
+  /* 縦横比をキープしたいので高さは幅に自動対応するようにしておく */
+  height: auto;
+}
+
+/* PC でのセンタリング表示用に一定の最大幅を持つコンテナを作っておく */
+.container {
+  /* 大きいコンテナの最大幅は 1280px に */
+  max-width: 1280px;
+}
+
+.container-sm {
+  /* 小さいコンテナの最大幅は 768px に */
+  max-width: 768px;
+}
+
+.container, .container-sm {
+  /* コンテナは双方とも内側に 40px の余白をとっておく */
+  padding: 0 40px;
+
+  /* 幅の指定してあるボックスは左右のマージンを auto にするとセンタリングされる */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 以下コンポーネント用の記述 */
+
+/* cover */
+.cover {
+  background-color: #000;
+  height: 100vh;
+  position: relative;
+}
+
+.cover-poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/cover.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.cover-label {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.cover-label img {
+  width: 36px;
+}
+
+
+
+@media screen and (min-width:768px) {
+
+  .cover-title {
+    left: initial;
+    left: auto;
+    right: 40px;
+    transform: translateY(-50%);
+  }
+
+  .cover-label img {
+    width: 72px;
+  }
+}
+
+
+/* hero */
+.hero {
+   position: relative;
+   background-color: #fff;
+   height: 100vh;
+ }
+
+ .hero .container {
+   position: relative;
+ }
+
+ .hero-label {
+   position: absolute;
+   top: 40px;
+   left: 40px;
+   z-index: 1;
+ }
+
+ .hero-label img {
+   width: 36px;
+ }
+
+
+.hero-poster {
+  position: absolute;
+  background-image: url(../images/hero-poster.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+  width: calc(100% - 80px);
+  height: calc(100% - 280px);
+  z-index: 1;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes continue {
+  0% {
+    bottom: 40px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 20px;
+    opacity: 1;
+  }
+}
+
+.hero-nav {
+  position: absolute;
+  z-index: 1;
+  bottom: 20px;
+  /* 基準を中央にしておいて、*/
+  left: 50%;
+  /* 要素の半分の幅だけ左に戻すとセンタリングできる */
+  transform: translateX(-50%);
+  animation: continue 0.5s linear 0.5s 3;
+}
+
+ /* デスクトップ（ウインドウ幅768px以上の場合） */
+ @media screen and (min-width: 768px) {
+
+   .hero-title-primary {
+     font-size: 72px;
+   }
+
+   /* PCでは改行しない */
+   .hero-title-primary br,
+   .hero-title-secondary br {
+     display: none;
+   }
+
+   .hero-title-secondary {
+     font-size: 24px;
+   }
+
+   .hero-label img {
+     width: 72px;
+   }
+
+   .hero-poster {
+     max-width: 1280px;
+   }
+ }
+
+/* lead */
+.lead {
+  background-color: #fff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.lead p {
+  color: #464647;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: justify;
+}
+
+@media screen and (min-width: 768px)  {
+  .lead p{
+    font-size: 18px;
+  }
+}
+
+
+/* panel */
+.panel {
+  display: flex;
+  flex-direction:column;/* デフォルトの横組みを縦組みに変更する */
+}
+
+.panel-item {
+  position: relative; /* キャプションを右下に絶対配置するために、基準点をつくる */
+  z-index: 1;
+}
+
+/* 比率を固定するための箱を作る */
+.panel-item:before{
+  content: "";
+  display: block;
+  padding-top: 75%; /* 4:3の箱にしている */
+}
+
+.panel-item-content {
+  position: absolute;
+  width: 100%;
+  height:100%;
+  top: 0;
+  left: 0;
+  padding: 40px; /* 4辺にパディングをとる */
+  display: flex;/* 中のテキストをセンタリングするので flex コンテナにする */
+  flex-direction: column;/* アイテムは縦方向 */
+}
+
+/* テキスト部分 */
+.panel-item-description {
+  background-color: #111;
+  order: 2;
+}
+
+.panel-item-description p {
+  color: #eee;
+  font-size: 16px;
+  max-width: 480px;/* 1行が長くなると読みにくいので、テキストの最大幅を決める */
+  margin-left: auto;/* 幅が決まっている場合、左右の余白を auto にするとセンタリングできる  */
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* ポスター */
+.panel-item-poster {
+  background-size: cover;
+  background-position: center;
+  order: 1;
+}
+
+/* キャプション */
+.photo-caption {
+  color: #999;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1;
+}
+
+.panel-item-poster-primary {
+  background-image: url(../images/Bill_Gates.jpg);
+}
+
+.panel-item-poster-secondary {
+  background-image: url(../images/steve_jobs.jpg);
+}
+
+@media screen and (min-width:768px){
+  .panel {
+    flex-direction: row; /* flexアイテムの方向を初期値（横向き）に指定しなおす */
+  }
+
+  .panel-item {
+    width: 50%;
+    order: unset; /* デスクトップ時は順番を強制しない */
+  }
+
+  .panel-item:before {
+    padding-top: 100%;
+  }
+
+  .panel-item-content {
+    padding-left: 80px;
+    padding-right: 80px;
+    justify-content: center;
+  }
+
+  .panel-item-description p {
+    font-size: 20px;
+  }
+
+  .photo-caption {
+    font-size: 14px;
+  }
+}
+
+
+
+/* article */
+.article {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.article h3 {
+  font-size: 18px;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 300px;
+  line-height: 1.4;
+  color: #464647;
+}
+
+.article .index {
+  /* センター寄せにしたいのでブロック要素にする */
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 300px;
+  line-height: 1.4;
+}
+
+.article p {
+  color: #464647;
+  font-size: 12px;
+  margin-top: 1.5em;
+  text-align: justify;
+}
+
+.article p img {
+  vertical-align: bottom;
+}
+
+.article-odd {
+  background-color: #fff;
+}
+
+.article-even {
+   background-color: #fff;
+ }
+
+ .img-tv {
+   width: auto;
+   max-height: 150px;
+   float: right;
+   margin-top:  -80px;
+   margin-right: -60px;
+ }
+
+ .img_clean {
+   float: left;
+   width: auto;
+   height: 250px;
+   margin-top: -200px;
+   margin-left: -50px;
+   opacity: 0.6;
+ }
+
+ .live {
+   float: left;
+   width: auto;
+   max-height: 100px;
+   margin: 5px;
+   margin-bottom: 0px;
+   margin-top: 0px;
+   margin-right: 20px;
+ }
+
+ .img-pen  {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+
+ .cook {
+   width: auto;
+   max-height: 200px;
+   display: block;
+   float: right;
+ }
+
+.book {
+  float: left;
+  margin-top: -250px;
+  margin-left: -150px;
+  opacity: 0.5;
+}
+
+
+
+ @media screen and (min-width:768px) {
+   .article p {
+     font-size: 16px;
+     margin-top: 1.5em;
+     text-align: justify;
+   }
+   .article h3 {
+     font-size: 20px;
+   }
+    .cook p img{
+      width: auto;
+      max-height: 350px;
+      float: right;
+    }
+    .live {
+      width: auto;
+      max-height: 150px;
+      margin-bottom: 0px;
+      margin-top: 0px;
+      margin-right: 20px;
+    }
+ }
+
+ @media screen and (min-width:1280px)  {
+   .article {
+     position: relative;
+   }
+
+   .article h3 {
+     font-size: 24px;
+   }
+   .article .index {
+     font-size: 40px;
+     position: absolute;
+     top: 60px;
+     line-height: 1;
+   }
+
+   .article-odd .index {
+     /* 中央を基準にして数字の位置を決める*/
+     left: 50%;
+     margin-left: -600px;
+   }
+
+   .article-even .index {
+     right: 50%;
+     margin-right: -600px;
+   }
+ }
+
+/* poster */
+.poster {
+  height: 100vh;
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-size: contain;
+  background-attachment: fixed;
+}
+
+.poster-primary {
+  background-image: url(../images/poster.jpg);
+}
+
+.poster-secondary {
+  background-image: url(../images/poster_second.jpg);
+}
+
+.poster-third {
+  background-image: url(../images/poster_third.jpg);
+}
+
+
+
+
+/* word */
+.word {
+  background-color: #fffffc;
+  color: #7a7a79;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: justify;
+}
+
+.word-item-title h1 {
+  color: #7a7a79;
+  font-size: 20px;
+}
+
+.word-item p {
+  font-size: 14px;
+}
+
+@media screen and (min-width:768px) {
+  /* 横並びにレイアウトしたい要素の親をFlexコンテナに指定する */
+  .word .container{
+    display: flex;
+  }
+
+  .word-item {
+    width: 50%;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .word-item-title {
+    margin-left: 0;
+  }
+
+.word-item-title h2 {
+  font-weight: 300;
+  font-size: 24px;
+}
+
+  .word-item-description {
+    margin-right: 0;
+  }
+
+}
+
+
+/* footer */
+.footer {
+  background-color: #000;
+  color: #999;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.footer p strong {
+  color: #999;
+  font-weight: 600px;
+}
+
+@media screen and (min-width:768px)  {
+  .footer .container {
+    display: flex;
+  }
+
+
+.footer-item {
+  width: 50%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.footer-item:first-child {
+  margin-left: 0;
+}
+
+.footer-item:last-child {
+  margin-right: 0;
+}
+}
+
+.online  .online-content { display: block; }
+.offline .online-content { display: none; }
+.online  .offline-content { display: none; }
+.offline .offline-content { display: block; }
