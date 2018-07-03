@@ -1,0 +1,576 @@
+body{
+
+  background-color: #fcfcfc;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+
+  letter-spacing: 0.05em;
+
+  line-height: 1.8;
+
+  font-feature-settings: 'pkna';
+}
+
+ @media screen and (min-width: 768px) {
+    body {
+      font-size: 18px;
+    }
+  }
+
+h1, h2, h3, h4, h5, h6 {
+   font-weight: 600;
+   line-height: 1.4;
+ }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1280px;
+}
+
+.container-sm {
+  max-width: 768px;
+}
+
+.container .container-sm {
+  padding: 0 40px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.online-content { display: none; }
+
+
+/* 以下コンポーネント用の記述 */
+/* cover */
+.cover {
+  background-color: #000;
+  height: 100vh;
+  position: relative;
+}
+
+.cover-poster{
+  position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-image: url(../images/oumugai.png);
+ background-size: cover;
+ background-position: center;
+ z-index: 1;
+ opacity: 0.6;
+}
+
+.cover-label{
+  position: absolute;
+  margin: 40px;
+  z-index: 1;
+}
+
+.cover-label img {
+  width: 40px;
+}
+
+ .cover-title {
+  position: absolute;
+  top: 50%;
+  left: 42%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.cover-title-primary {
+  margin: 0;
+  font-size: 40px;
+  font-style: italic;
+  font-weight: bold;
+  color: #0050d1;
+  white-space: nowrap;
+}
+
+ .cover-title-secondary{
+   font-size: 15px;
+   font-style: italic;
+   color: #424242;
+ }
+
+ @media screen and (min-width 768px;) {
+   .cover-title{
+     left: initial
+     left: auto;
+     right: 40px;
+     transform: translateY(-50%);
+   }
+ }
+
+
+/* hero */
+.hero{
+  position: relative;
+  background-color: #fff;
+  height: 100vh;
+}
+
+.hero:after {
+  background-color: #000000;
+  position: absolute;
+   width: 100%;
+  height: 50%;
+  bottom: 0;
+  left: 0;
+  content: "";
+}
+
+.hero .container {
+  position: relative;
+}
+
+.hero-label {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  z-index: 1;
+}
+
+.hero-label img {
+  width: 36px;
+}
+
+.hero-title {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  z-index: 1;
+}
+
+.hero-title-primary {
+  margin: 0;
+  line-height: 1;
+  font-size: 40px;
+}
+
+.hero-title-secondary {
+  font-size: 16px;
+  font-weight: 300;
+  color: #999999;
+}
+
+.hero-poster {
+  position: absolute;
+  background-image: url(../images/IMG_3597b.jpg);
+  background-size: cover;
+  background-position: center;
+  width: calc(100% - 80px);
+  height: calc(100% - 280px);
+  z-index: 1;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes continue {
+  0% {
+    bottom: 40px;
+    opacity: 1;
+  }
+  100% {
+    bottom: 10px;
+    opacity: 1;
+  }
+}
+
+.hero-nav {
+  position: absolute;
+  z-index: 1;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: continue 0.6s linear 1s 5;
+}
+
+@media screen and (min-width: 768px) {
+
+  .hero-title-primary {
+    font-size: 72px;
+  }
+
+  .hero-title-primary br,
+  .hero-title-secondary br {
+    display: none;
+  }
+
+  .hero-title-secondary {
+    font-size: 24px;
+    font-style: italic;
+  }
+
+  .hero-label img {
+    width: 72px;
+  }
+
+  .hero-poster {
+    max-width: 1280px;
+  }
+}
+
+/* lead */
+.lead {
+  background-color: ##bababa;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.lead p {
+  font-weight: 600;
+  text-align: justify;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .lead p{
+    font-size: 20px;
+    margin: auto;
+  }
+}
+
+/* article1 */
+/* article2 */
+.article {
+   padding-top: 40px;
+   padding-bottom: 40px;
+ }
+
+ .article h3 {
+   font-size: 18px;
+   text-align: center;
+ }
+ .article h4 {
+   font-size: 25px;
+   font-weight: lighter;
+   text-align: center;
+   color: #f7f7f7;
+   margin: 0px;
+ }
+ .article h4 {
+   font-size: 25px;
+   font-weight: lighter;
+   text-align: center;
+   color: #f7f7f7;
+   margin: 0px;
+ }
+
+ .container-sm1 > p{
+   color: #f7f7f7;
+ }
+
+ .container-sm2 > p{
+   color: #000000;
+ }
+
+
+ .article .index {
+   /* センター寄せにしたいのでブロック要素にする */
+   display: block;
+   text-align: center;
+   font-size: 20px;
+   font-weight: 600;
+   line-height: 1.4;
+ }
+
+ .article p {
+   margin-top: 1.5em; /* 1.5文字分の余白 */
+   margin-bottom: 1.5em;
+   text-align: justify; /* テキストの右を揃える */
+   padding-left: 20px;
+   padding-right: 20px;
+ }
+
+ .article p img {
+   vertical-align: bottom; /* インライン要素の縦方向の寄せ設定 */
+
+ }
+
+ .article-odd {
+   background-color: #d60a0a;
+ }
+ .article-even {
+   background-color: #cccccc;
+ }
+
+ /* 小さい方のコンテナ幅以上になった時に上書きするスタイル */
+ @media screen and (min-width: 768px) {
+   .article h3 {
+   	font-size: 20px;
+   }
+ }
+
+ /* 大きい方のコンテナ幅以上になった時に上書きするスタイル */
+ @media screen and (min-width: 1280px) {
+
+   .article {
+     /* 数字の位置を決める基準点を作る */
+     position: relative;
+   }
+
+   .article h3 {
+     font-size: 24px;
+   }
+
+   .article .index {
+     font-size: 40px;
+     position: absolute; /* 位置を絶対配置にする */
+     top: 60px;
+     line-height: 1; /* 行の高さを文字の高さに揃える */
+   }
+
+   .article-odd .index {
+     /* 中央を基準にして数字の位置を決める*/
+     left: 50%;
+     /* 寄せたい方向にマイナス値の余白を入れる */
+     margin-left: -600px;
+   }
+
+   .article-even .index {
+     /* 中央を基準にして数字の位置を決める*/
+     right: 50%;
+     /* 寄せたい方向にマイナス値の余白を入れる */
+     margin-right: -600px;
+   }
+ }
+
+/* panel 1 */
+.panel {
+   display: flex;
+   flex-direction: column;
+ }
+
+ .panel-item {
+   position: relative;
+   z-index: 1;
+ }
+
+ /* 比率を固定するための箱を作る */
+ .panel-item:before {
+   content: "";
+   display: block;
+   padding-top: 75%; /* 4:3の箱にしている */
+ }
+
+ /* ↑で作った固定比率の箱ぴったりの箱を作って、かぶせる  */
+ .panel-item-content {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   padding: 40px; /* 4辺にパディングをとる */
+   /* 中のテキストをセンタリングするので flex コンテナにする */
+   display: flex;
+   /* アイテムは縦方向 */
+   flex-direction: column;
+ }
+
+ /* テキスト部分 */
+ .panel-item-description {
+   background-color: #303030; /* 背景を濃いグレーに */
+   order: 2; /* スマホの時は順番を先にしたい（orderプロパティはflexアイテムにしか使えない） */
+ }
+
+ .panel-item-description p  {
+   color: #eeeeee; /* 本文を薄いグレーに */
+   font-size: 18px; /* フォントサイズを少し上げる */
+   text-align: justify; /* テキストの右側を揃える */
+   max-width: 480px; /* 1行が長くなると読みにくいので、テキストの最大幅を決める */
+   margin-left: auto; /* 幅が決まっている場合、左右の余白を auto にするとセンタリングできる  */
+   margin-right: auto;
+   /* 上下のマージンは不要なので、取る */
+   margin-top: 0;
+   margin-bottom: 0;
+ }
+
+ /* ポスター共通 */
+ .panel-item-poster {
+   background-size: cover; /* 背景を要素いっぱいに */
+   background-position: center; /* 背景位置を中央に */
+   order: 1; /* スマホの時は順番を先にしたい（orderプロパティはflexアイテムにしか使えない） */
+ }
+
+ /* 複数背景画像を使う場合はクラス名をわけておく */
+ .panel-item-poster-primary {
+   background-image: url(../images/IMG_3579.JPG);
+ }
+
+ .panel-item-poster-secondary {
+
+ }
+
+ @media screen and (min-width: 768px) {
+   /*　デスクトップ時は上下のパネルを左右横組みにする　*/
+   .panel {
+   	/* flexアイテムの方向を初期値（横向き）に指定しなおす */
+     flex-direction: row;
+   }
+
+   .panel-item {
+     /* 横組み時に幅がないので指定する */
+     width: 50%;
+     /* デスクトップ時は順番を強制しない */
+     order: unset;
+   }
+
+   .panel-item:before {
+     padding-top: 100%; /* デスクトップでは 1:1 */
+   }
+
+   .panel-item-content {
+     padding-left: 80px;
+     padding-right: 80px;
+     /* 上下中央寄せにする（flexアイテム限定） */
+     jutify-content: center;
+   }
+
+   .panel-item-description p {
+     font-size: 18px;
+   }
+
+   .photo-caption {
+   	font-size: 14px;
+   }
+ }
+
+
+/* article3 */
+/* article4*/
+
+/* poster1 */
+.poster{
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.poster-primary {
+ background-image: url(../images/dish01.jpg);
+}
+
+@media screen and (min-width: 768px) {
+   .poster {
+     background-attachment: fixed;
+   }
+ }
+
+/* article5 */
+/* article6*/
+
+/* panel2 */
+.poster{
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.poster-secondary {
+ background-image: url(../images/dish02.jpg);
+}
+
+@media screen and (min-width: 768px) {
+   .poster {
+     background-attachment: fixed;
+   }
+ }
+
+
+/* article7 */
+/* article8 */
+
+/* poster2 */
+
+/* article9 */
+/* article10 */
+
+/* word */
+.word {
+  background-color: #111111;
+  color: #999999;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.word-item-title h2{
+  font-size: 20px;
+  color: #eeeeee
+}
+
+@media screen and (min-width: 768px) {
+
+   .word .container {
+     display: flex;
+   }
+
+   .word-item {
+     width: 50%;
+     margin-left: 50px;
+     margin-right: 50px;
+   }
+
+   .word-item-title {
+     margin-left: 10;
+   }
+
+   .word-item-title h2{
+     font-weight: 300PX;
+     font-size: 24px;
+   }
+
+   .word-item-description {
+     text-align: justify;
+     margin-right: 10;
+   }
+ }
+/* footer */
+.footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #d60a0a;
+  color: #c6c6c6;
+
+ }
+
+ .footer p strong{
+  color: #ffffff;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+  .footer .container{
+    display: flex;
+  }
+
+  .footer-item{
+  width: 50%;
+  margin-left: 20px;
+  margin-right: 20px;
+  }
+}
+
+  .footer-item:first-child{
+  margin-left: 2px0;
+}
+
+  .footer-item:last-child{
+  margin-left: 20px;
+}
+
+/* オンライン・オフライン時のコンテンツ */
+ .online  .online-content { display: block; }
+.offline .online-content { display: none; }
+.online  .offline-content { display: none; }
+.offline .offline-content { display: block; }

@@ -159,9 +159,9 @@ img {
 /* hero */
 
 
-/* オンライン時のコンテンツ */
+/* オンライン時のコンテンツ
 .online-content { display: none; }
-
+ */
 /* 以下コンポーネント用の記述 */
 
 /* hero */
@@ -193,7 +193,7 @@ img {
 .hero-label {
   position: absolute;
   top: 40px;
-  left: 40px;
+  left: 0px;
   z-index: 1;
 }
 
@@ -618,7 +618,7 @@ padding-top: 20px;
 padding-bottom: 20px;
 
 /*見出しの色を立たせる */
-
+}
 .footer p strong {
    color: #ffffff;
    font-weight: 600;
@@ -649,7 +649,7 @@ padding-bottom: 20px;
  }
 
  /* オンライン・オフライン時のコンテンツ */
-.online  .online-content { display: block; }
+.online .online-content { display: block; }
 .offline .online-content { display: none; }
-.online  .offline-content { display: none; }
+.online .offline-content { display: none; }
 .offline .offline-content { display: block; }
