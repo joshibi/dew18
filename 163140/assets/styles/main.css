@@ -265,7 +265,7 @@ img {
     width: 100px;
   }
 
-
+}
 
 /* lead */
 .lead {
@@ -582,3 +582,8 @@ font-size: 24px;
     margin-right: 0;
   }
 }
+
+.online  .online-content { display: block; }
+ .offline .online-content { display: none; }
+ .online  .offline-content { display: none; }
+ .offline .offline-content { display: block; }
