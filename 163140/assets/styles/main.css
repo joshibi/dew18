@@ -1,0 +1,584 @@
+/* body 要素には全体に適用するスタイルを追加しておく */
+body {
+  /* 背景色をグレーに */
+  background-color: #ffffff;
+
+  /* サンセリフ体を基本に、欧文はシステムフォント→Helvetica Neue→Arial、和文は游ゴシック体→ヒラギノ角ゴ→メイリオの順に */
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+
+  /* 文字間を1文字の5%くらい空ける */
+  letter-spacing: 0.05em;
+
+  /* 行間も少しゆったりとる */
+  line-height: 1.8;
+
+  /* 全角かな文字に対して字詰めを有効化 */
+  font-feature-settings: 'pkna';
+}
+
+/* PC (ウインドウ幅 768px 以上) の場合はこの {} 内に記述する  */
+@media screen and (min-width: 768px) {
+  body {
+    /* PCの場合はデフォルトのフォントサイズを少し大きめにする */
+    font-size: 18px;
+  }
+}
+
+/* 見出し要素の行間は少し狭くしておく */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.4;
+}
+
+/* 画像は親要素の幅をを超えないようにしておく */
+img {
+  /* 最大幅を 100% に */
+  max-width: 100%;
+
+
+
+  /* 縦横比をキープしたいので高さは幅に自動対応するようにしておく */
+  height: auto;
+}
+
+/* PC でのセンタリング表示用に一定の最大幅を持つコンテナを作っておく */
+.container {
+  /* 大きいコンテナの最大幅は 1280px に */
+  max-width: 1280px;
+}
+
+.container-sm {
+  /* 小さいコンテナの最大幅は 768px に */
+  max-width: 768px;
+}
+
+.container, .container-sm {
+  /* コンテナは双方とも内側に 40px の余白をとっておく */
+  padding: 0 40px;
+
+  /* 幅の指定してあるボックスは左右のマージンを auto にするとセンタリングされる */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* オンライン時のコンテンツ */
+
+/* 以下コンポーネント用の記述 */
+
+/* cover */
+ .cover {
+   background-color: #fff;
+   height: 100vh;
+   position: relative;
+ }
+
+ .cover-poster {
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-image: url(../images/icon-online.svg);
+   background-size: 50%;
+   background-position: center;
+   z-index: 1;
+   /*opacity:　0.5;*/
+ }
+
+ .cover-title {
+   position:absolute;
+   top: 57%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   z-index: 1;
+ }
+
+ .cover-title-primary {
+   margin: 0;
+   font-size: 40px;
+   color: #000000;
+   white-space: nowrap;
+ }
+
+ .cover-title-primary span {
+   background-color:#ff65a3;
+ }
+
+ .cover-title-secondary {
+   margin-top:120px;
+   font-size: 16px;
+ }
+
+ .cover-title-secondary span {
+   background-color: #ff65a3;
+   top:30%;
+
+ }
+
+ @media screen and (min-width: 768px) {
+
+   .cover-title {
+     text-align:center;
+   }
+
+   .cover-title-primary span {
+   	font-size: 42px;
+
+   }
+
+   .cover-title-secondary span {
+     font-size: 20px;
+   }
+
+   .cover-title-secondary span br {
+   	display: none;
+   }
+
+   .cover-label img {
+     width: 72px;
+   }
+ }
+
+/* hero */
+.hero {
+  position: relative;
+  background-color: #ffffff;
+  /* 1画面分の高さにしておく */
+  height:100vh;
+}
+
+/* .hero の後ろに擬似要素で黒い矩形を作ってレイアウトする */
+/.hero:after {
+  background-color: #000000;
+  position: absolute;
+   width: 100%;
+  height: 50%;
+  bottom: 0;
+  left: 0;
+  /* 疑似要素の場合、content で要素を入れてあげないとボックスが作られない */
+  content: "";
+}
+
+.hero .container {
+  /* アイコン、タイトルの位置基準にする */
+  position: relative;
+}
+
+.hero-label {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  z-index: 1;
+}
+
+.hero-label img {
+  width: 72px;
+}
+
+.hero-title {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  z-index: 1;
+}
+
+.hero-title-primary {
+  margin: 0;
+  line-height: 1;
+  font-size: 40px;
+  background-color:#ff65a3;
+}
+
+.hero-title-secondary {
+  font-size: 16px;
+  font-weight: 300;
+  color: #999999;
+}
+
+.hero-poster {
+  /* 黒の矩形の上にかぶせる */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/icon-offline.svg);
+  background-size: 50%;
+  background-position: center;
+  z-index: 1;
+
+}
+
+
+.cover-poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/icon-online.svg);
+  background-size: 50%;
+  background-position: center;
+  z-index: 1;
+  /*opacity:　0.5;*/
+}
+
+/* 矢印を動かしてスクロールを促すためのアニメーション */
+@keyframes continue {
+  0% {
+    bottom: 40px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 20px;
+    opacity: 1;
+  }
+}
+
+.hero-nav {
+  position: absolute;
+  z-index: 1;
+  bottom: 20px;
+  /* 基準を中央にしておいて、*/
+  left: 50%;
+  /* 要素の半分の幅だけ左に戻すとセンタリングできる */
+  transform: translateX(-50%);
+  animation: continue 0.5s linear 3s 3;
+}
+
+/* デスクトップ（ウインドウ幅768px以上の場合） */
+@media screen and (min-width: 768px) {
+
+  .hero-title-primary {
+    font-size: 72px;
+  }
+
+  /* PCでは改行しない */
+  .hero-title-primary br,
+  .hero-title-secondary br {
+    display: none;
+  }
+
+  .hero-title-secondary {
+    font-size: 24px;
+  }
+
+  .hero-label img {
+    width: 100px;
+  }
+
+
+
+/* lead */
+.lead {
+   background-color:#ff65a3;;
+   padding-top: 20px;
+   padding-bottom: 20px;
+ }
+
+ .lead p {
+   font-weight: 600;
+   text-align: justify;
+ }
+
+ @media screen and (min-width: 768px) {
+   .lead p {
+     font-size: 20px;
+   }
+}
+
+
+/* panel */
+.panel {
+  display: flex;
+/* デフォルトの横組みを縦組みに変更する */
+flex-direction: column;
+}
+
+.panel-item {
+/* キャプションを右下に絶対配置するために、基準点をつくる */
+position: relative;
+/* static 以外の positionを指定したら、重なりの値を1にしておく */
+z-index: 1;
+}
+
+/* 比率を固定するための箱を作る */
+.panel-item:before {
+content: "";
+display: block;
+padding-top: 75%; /* 4:3の箱にしている */
+}
+
+/* ↑で作った固定比率の箱ぴったりの箱を作って、かぶせる  */
+.panel-item-content {
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+padding: 40px; /* 4辺にパディングをとる */
+/* 中のテキストをセンタリングするので flex コンテナにする */
+display: flex;
+/* アイテムは縦方向 */
+flex-direction: column;
+}
+
+/* テキスト部分 */
+.panel-item-description {
+background-color: #111111; /* 背景を濃いグレーに */
+order: 2; /* スマホの時は順番を先にしたい（orderプロパティはflexアイテムにしか使えない） */
+}
+
+.panel-item-description p  {
+color: #eeeeee; /* 本文を薄いグレーに */
+font-size: 18px; /* フォントサイズを少し上げる */
+text-align: justify; /* テキストの右側を揃える */
+max-width: 480px; /* 1行が長くなると読みにくいので、テキストの最大幅を決める */
+margin-left: auto; /* 幅が決まっている場合、左右の余白を auto にするとセンタリングできる  */
+margin-right: auto;
+/* 上下のマージンは不要なので、取る */
+margin-top: 0;
+margin-bottom: 0;
+}
+
+/* ポスター共通 */
+.panel-item-poster {
+background-size: cover; /* 背景を要素いっぱいに */
+background-position: center; /* 背景位置を中央に */
+order: 1; /* スマホの時は順番を先にしたい（orderプロパティはflexアイテムにしか使えない） */
+}
+
+/* キャプション */
+.photo-caption {
+color: #ffffff; /* 色をグレーに */
+/* 親要素の右下に絶対配置する */
+position: absolute;
+bottom: 40px;
+right: 40px;
+z-index: 1;
+}
+
+/* 複数背景画像を使う場合はクラス名をわけておく */
+.panel-item-poster-primary {
+background-image: url(../images/guitar.jpg);
+}
+
+.panel-item-poster-secondary {
+ background-image: url(../images/angry.jpg);
+}
+
+@media screen and (min-width: 768px) {
+/*　デスクトップ時は上下のパネルを左右横組みにする　*/
+.panel {
+ /* flexアイテムの方向を初期値（横向き）に指定しなおす */
+  flex-direction: row;
+}
+
+.panel-item {
+  /* 横組み時に幅がないので指定する */
+  width: 50%;
+  /* デスクトップ時は順番を強制しない */
+  order: unset;
+}
+
+.panel-item:before {
+  padding-top: 100%; /* デスクトップでは 1:1 */
+}
+
+.panel-item-content {
+  padding-left: 80px;
+  padding-right:80px;
+  jutify-content:center;
+}
+
+.panel-item-description p {
+  font-size: 20px;
+}
+
+.photo-caption {
+ font-size: 14px;
+}
+}
+}
+
+
+/* article */
+.article {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.article h3{
+  font-size: 18px;
+}
+
+.article .index{
+display: block;
+color:#000000;
+text-align: center;
+font-size: :20px;
+font-weight: 600;
+line-height: 1.4;
+}
+
+.article p{
+  color: #000000;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  text-align: justify;
+}
+
+.article p img{
+  vertical-align:bottom;
+}
+
+.article-odd{
+  background-color: #ffffff;
+}
+
+.article-even{
+  background-size: 400px;
+  background-color: #ff65a3;
+  }
+
+@media screen and (min-width:768px){
+.article h3{
+font-size: 20px;
+color: #000000;
+}
+}
+
+@media screen and (min-width:1280px){
+
+.article{
+position:relative;
+}
+
+.article h3{
+font-size: 24px;
+}
+
+.article .index{
+color: #000000;
+font-size: 40px;
+position:absolute;
+top:60px;
+line-height:1;
+}
+.article-odd .index{
+left:50%;
+margin-left:-600px;
+}
+
+.article-even .index{
+right: 50%;
+margin-right:-600px;
+}
+}
+
+/* poster */
+.poster {
+  height: 100vh;
+  background-repeat: no-repeat; /* 繰り返ししない */
+  background-position: center; /* 位置を中央に */
+  background-size: cover; /* サイズを領域いっぱいに */
+}
+
+/* デスクトップの場合は背景を固定する */
+@media screen and (min-width: 768px) {
+  .poster {
+    /* スクロールに対して背景画像が固定される */
+    background-attachment: fixed;
+  }
+}
+
+/* ポスターの画像を複数使いたい時、poster クラスに画像を指定してしまうと煩雑になってしまうので、画像の部分だけ別のクラス名にしてしまう */
+.poster-primary {
+  background-image: url(../images/sunset.jpg);
+}
+
+/* 画像を増やしたい場合は、別のクラス名をつけて別の画像を指定して、poster と一緒に使う */
+.poster-secondary {
+  background-image: url(../images/.svg);
+}
+
+
+/* word */
+.word{
+background-size: 400px;
+background-image: url(../images/hyogara.svg);
+color:#eeeeee;
+padding-top:40px;
+padding-bottom:40px;
+margin-top:120px;
+background-color: #ff65a3;
+top:30%;
+}
+
+.word-item-title h2 {
+  color: #eeeeee;
+  font-size: 20px;
+}
+
+
+
+@media screen and (min-width:768px){
+.word .container{
+display: flex;
+}
+
+.word-item{
+width:50%;
+margin-left:20px;
+margin-right: 20px;
+}
+
+.word-item-title{
+  margin-left: 0;
+}
+
+.word-item-title h2{
+font-weight: 300;
+font-size: 24px;
+}
+
+.word-item-description{
+  margin-right: 0;
+}
+}
+
+/* footer */
+.footer {
+  background-color: #000000;
+  color: #999999;
+  /* 中の段落のマージンがあって背景が入っていないので、上下にパディングをつける */
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* 見出しの色を立たせる */
+.footer p strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* デスクトップ時（ウインドウ幅768px以上）は横組みにする */
+@media screen and (min-width: 768px) {
+  .footer .container {
+    display: flex; /* flexコンテナに指定 */
+  }
+
+  .footer-item {
+    width: 50%;
+    /* flex アイテム間に余白をつける */
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  /* footer-item のウインドウの左右に隣接した方の余白は必要ないので、擬似要素を使って余白をとる指定をする */
+  .footer-item:first-child {
+    margin-left: 0;
+  }
+
+  .footer-item:last-child {
+    margin-right: 0;
+  }
+}
