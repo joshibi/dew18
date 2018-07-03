@@ -210,7 +210,7 @@ img {
 .hero-poster {
   /*黒の矩形の上にかぶせる*/
   position: absolute;
-  background-image: url(../images/hero.jpg);
+  background-image: url(../images/Hero.jpg);
   background-size: cover;
   background-position:center;
   width: calc(100% - 80px);
