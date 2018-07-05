@@ -401,13 +401,12 @@ img {
 
 .article-aa {
   background-color: #181c23;
-  color: #c6c0b3
-
+  color: #c6c0b3;
 }
 
 .article-bb {
   background-color: #a2dfef;
-  color: #ffffff
+  color: #ffffff;
 }
 
 .article-
@@ -441,6 +440,16 @@ img {
     .article-even .index {
       right: 50%;
       margin-right: -600px;
+    }
+
+    .article-aa .index {
+      left: 50%;
+      margin-left: -600px;
+    }
+
+    .article-bb .index {
+      left: 50%;
+      margin-left: -600px;
     }
   }
 

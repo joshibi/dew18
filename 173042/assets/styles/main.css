@@ -534,3 +534,9 @@ font-weight:  600px;
 }
 
 }
+
+/* オンライン・オフライン時のコンテンツ */
+.online  .online-content { display: block; }
+ .offline .online-content { display: none; }
+ .online  .offline-content { display: none; }
+ .offline .offline-content { display: block; }
