@@ -6,7 +6,7 @@ body {
   /* サンセリフ体を基本に、欧文はシステムフォント→Helvetica Neue→Arial、和文は游ゴシック体→ヒラギノ角ゴ→メイリオの順に */
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
 
-  /* 文字間を1文字の5%くらい空ける */
+  /* 文字間を1文字の　5%くらい空ける */
   letter-spacing: 0.05em;
 
   /* 行間も少しゆったりとる */
@@ -62,7 +62,7 @@ img {
 
 /* cover */
 .cover {
-  background-color: #000;
+  background-color: ##86eaef;
   height: 100vh;
   position: relative;
 }
@@ -351,7 +351,7 @@ background-image: url(../images/icon-offline.svg);
 .panel-item{
 width: 50%;
 order: unset;
-}
+
 }
 
 .panel-item:before {
@@ -462,7 +462,7 @@ background-image: url(../images/webudezatukau.jpg);
 }
 
 .poster-secondary {
-   background-image: url(../images/icon-offline.svg);
+   background-image: url(../images/webunn.jpg);
  }
 
     /* word */

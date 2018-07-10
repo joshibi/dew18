@@ -1,25 +1,24 @@
 /* body 要素には全体に適用するスタイルを追加しておく */
 body {
-  /* 背景色をグレーに */
   background-color: #f5f5f5;
 
-  /* サンセリフ体を基本に、欧文はシステムフォント→Helvetica Neue→Arial、和文は游ゴシック体→ヒラギノ角ゴ→メイリオの順に */
+
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
 
-  /* 文字間を1文字の5%くらい空ける */
+
   letter-spacing: 0.05em;
 
-  /* 行間も少しゆったりとる */
+
   line-height: 1.8;
 
-  /* 全角かな文字に対して字詰めを有効化 */
+
   font-feature-settings: 'pkna';
 }
 
-/* PC (ウインドウ幅 768px 以上) の場合はこの {} 内に記述する  */
+
 @media screen and (min-width: 768px) {
   body {
-    /* PCの場合はデフォルトのフォントサイズを少し大きめにする */
+
     font-size: 18px;
   }
 }
@@ -29,23 +28,21 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.4;
 }
 
-/* 画像は親要素の幅をを超えないようにしておく */
 img {
-  /* 最大幅を 100% に */
+
   max-width: 100%;
 
-  /* 縦横比をキープしたいので高さは幅に自動対応するようにしておく */
   height: auto;
 }
 
-/* PC でのセンタリング表示用に一定の最大幅を持つコンテナを作っておく */
+
 .container {
-  /* 大きいコンテナの最大幅は 1280px に */
+
   max-width: 1280px;
 }
 
 .container-sm {
-  /* 小さいコンテナの最大幅は 768px に */
+
   max-width: 768px;
 }
 
@@ -146,55 +143,55 @@ img {
 
 
 /* hero */
-.hero {
-  position: relative;
-  background-color: #fff;
-  height: 100vh;
-}
+ .hero {
+   position: relative;
+   background-color: #fff;
+   height: 100vh;
+ }
 
-.hero:after{
-  background-color: #00ced1;
-  position: absolute;
-  width: 100%;
-  height: 50%;
-  bottom:0;
-  left: 0;
-  content:"";
-  }
+ .hero:after {
+   background-color: #000000;
+   position: absolute;
+	  width: 100%;
+   height: 50%;
+   bottom: 0;
+   left: 0;
+   content: "";
+ }
 
-  .hero .container{
-    position: relative;
-  }
+ .hero .container {
+   position: relative;
+ }
 
-  .hero-lagel{
-    position: absolute;
-    top:auto;40px;
-    left:auto;40px;
-    z-index: 1;
-  }
+ .hero-label {
+   position: absolute;
+   top: 40px;
+   left: 40px;
+   z-index: 1;
+ }
 
-  .hero-lavel img{
-    width: 36px;
-}
+ .hero-label img {
+   width: 36px;
+ }
 
-.hero-title{
-  position: absolute;
-  top: 40px;
-  right: 40px;
-  z-index: 1;
-}
+ .hero-title {
+   position: absolute;
+   top: 40px;
+   right: 40px;
+   z-index: 1;
+ }
 
-.hero-title-primary{
-  margin: 0;
-  line-height: 1;
-  font-size:  40px;
-}
+ .hero-title-primary {
+   margin: 0;
+   line-height: 1;
+   font-size: 40px;
+ }
 
-.hero-title-secondary{
+ .hero-title-secondary {
    font-size: 16px;
-   font-weight: 300px;
-   color:#999999;
-}
+   font-weight: 300;
+   color: #999999;
+ }
 
 .hero-poster {
    position: absolute;
