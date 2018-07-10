@@ -460,13 +460,13 @@ background-image: url(../images/dean_3.jpg);
 height: 400px;
 background-image: url(../images/sub.png);
 }
-}
+
 
 
 /* word */
 .word {
-  background-color: #111111;
-  color: #999999;
+  background-color: #ffffff;
+  color: #000000;
   padding-top: 40px;
   padding-bottom: 40px;
 }
