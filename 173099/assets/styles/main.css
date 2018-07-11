@@ -87,17 +87,22 @@ img {
 .cover-title-primary {
   margin: 0;
   font-size: 40px;
-  font-style: italic;
   font-weight: bold;
   color: #0050d1;
   white-space: nowrap;
+}
+.cover-title-primary span {
+  background-color: #000000;
 }
 
  .cover-title-secondary{
    font-size: 15px;
    font-style: italic;
-   color: #424242;
+   color: #000000;
  }
+ .cover-title-secondary span {
+  background-color: #ffffff;
+}
 
  @media screen and (min-width 768px;) {
    .cover-title{
@@ -188,7 +193,7 @@ img {
   position: absolute;
   z-index: 1;
   bottom: 20px;
-  left: 50%;
+  left: 50%;v
   transform: translateX(-50%);
   animation: continue 0.6s linear 1s 5;
 }
@@ -199,6 +204,7 @@ img {
     font-size: 72px;
   }
 
+  /* PCでは改行しない */
   .hero-title-primary br,
   .hero-title-secondary br {
     display: none;
@@ -206,7 +212,6 @@ img {
 
   .hero-title-secondary {
     font-size: 24px;
-    font-style: italic;
   }
 
   .hero-label img {
@@ -220,10 +225,11 @@ img {
 
 /* lead */
 .lead {
-  background-color: ##bababa;
+  background-color: #bababa;
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
 
 .lead p {
   font-weight: 600;
@@ -239,8 +245,7 @@ img {
   }
 }
 
-/* article1 */
-/* article2 */
+/* article1,2 */
 .article {
    padding-top: 40px;
    padding-bottom: 40px;
@@ -254,24 +259,16 @@ img {
    font-size: 25px;
    font-weight: lighter;
    text-align: center;
-   color: #f7f7f7;
-   margin: 0px;
- }
- .article h4 {
-   font-size: 25px;
-   font-weight: lighter;
-   text-align: center;
-   color: #f7f7f7;
    margin: 0px;
  }
 
- .container-sm1 > p{
-   color: #f7f7f7;
+ .article-odd p {
+   color: #eeeeee;
  }
 
- .container-sm2 > p{
-   color: #000000;
- }
+ .article-even p {
+  color: #000000;
+}
 
 
  .article .index {
@@ -300,7 +297,7 @@ img {
    background-color: #d60a0a;
  }
  .article-even {
-   background-color: #cccccc;
+   background-color: #adadad;
  }
 
  /* 小さい方のコンテナ幅以上になった時に上書きするスタイル */
@@ -355,59 +352,49 @@ img {
    z-index: 1;
  }
 
- /* 比率を固定するための箱を作る */
  .panel-item:before {
    content: "";
    display: block;
-   padding-top: 75%; /* 4:3の箱にしている */
+   padding-top: 75%;
  }
 
- /* ↑で作った固定比率の箱ぴったりの箱を作って、かぶせる  */
  .panel-item-content {
    position: absolute;
    width: 100%;
    height: 100%;
    top: 0;
    left: 0;
-   padding: 40px; /* 4辺にパディングをとる */
-   /* 中のテキストをセンタリングするので flex コンテナにする */
+   padding: 40px;
    display: flex;
-   /* アイテムは縦方向 */
    flex-direction: column;
  }
 
  /* テキスト部分 */
  .panel-item-description {
-   background-color: #303030; /* 背景を濃いグレーに */
-   order: 2; /* スマホの時は順番を先にしたい（orderプロパティはflexアイテムにしか使えない） */
+   background-color: #303030;
+   order: 2;
  }
 
  .panel-item-description p  {
-   color: #eeeeee; /* 本文を薄いグレーに */
-   font-size: 18px; /* フォントサイズを少し上げる */
-   text-align: justify; /* テキストの右側を揃える */
-   max-width: 480px; /* 1行が長くなると読みにくいので、テキストの最大幅を決める */
-   margin-left: auto; /* 幅が決まっている場合、左右の余白を auto にするとセンタリングできる  */
+   color: #eeeeee;
+   font-size: 18px;
+   text-align: justify;
+   max-width: 480px;
+   margin-left: auto;
    margin-right: auto;
-   /* 上下のマージンは不要なので、取る */
    margin-top: 0;
    margin-bottom: 0;
  }
 
  /* ポスター共通 */
  .panel-item-poster {
-   background-size: cover; /* 背景を要素いっぱいに */
-   background-position: center; /* 背景位置を中央に */
-   order: 1; /* スマホの時は順番を先にしたい（orderプロパティはflexアイテムにしか使えない） */
+   background-size: cover;
+   background-position: center;
+   order: 1;
  }
 
- /* 複数背景画像を使う場合はクラス名をわけておく */
  .panel-item-poster-primary {
    background-image: url(../images/IMG_3579.JPG);
- }
-
- .panel-item-poster-secondary {
-
  }
 
  @media screen and (min-width: 768px) {
@@ -444,10 +431,6 @@ img {
    }
  }
 
-
-/* article3 */
-/* article4*/
-
 /* poster1 */
 .poster{
   height: 100vh;
@@ -457,44 +440,18 @@ img {
 }
 
 .poster-primary {
- background-image: url(../images/dish01.jpg);
+ background: url("../images/dish01.jpg");
 }
-
-@media screen and (min-width: 768px) {
-   .poster {
-     background-attachment: fixed;
-   }
- }
-
-/* article5 */
-/* article6*/
-
-/* panel2 */
-.poster{
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
 .poster-secondary {
- background-image: url(../images/dish02.jpg);
+ background: url("../images/dish02.jpg");
 }
+
 
 @media screen and (min-width: 768px) {
    .poster {
      background-attachment: fixed;
    }
  }
-
-
-/* article7 */
-/* article8 */
-
-/* poster2 */
-
-/* article9 */
-/* article10 */
 
 /* word */
 .word {
@@ -502,11 +459,17 @@ img {
   color: #999999;
   padding-top: 40px;
   padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .word-item-title h2{
   font-size: 20px;
   color: #eeeeee
+}
+
+.word-item-description{
+  text-align: justify;
 }
 
 @media screen and (min-width: 768px) {
@@ -535,6 +498,7 @@ img {
      margin-right: 10;
    }
  }
+
 /* footer */
 .footer {
   padding-top: 20px;
@@ -561,16 +525,13 @@ img {
   }
 }
 
-  .footer-item:first-child{
-  margin-left: 2px0;
-}
-
-  .footer-item:last-child{
+  .footer-item{
   margin-left: 20px;
 }
 
+
 /* オンライン・オフライン時のコンテンツ */
- .online  .online-content { display: block; }
+.online  .online-content { display: block; }
 .offline .online-content { display: none; }
 .online  .offline-content { display: none; }
 .offline .offline-content { display: block; }
