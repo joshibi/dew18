@@ -101,8 +101,8 @@ img {
 
 .cover-title {
   position: absolute;
-  bottom: -20%;
-  left: 50%;
+  top:83%;
+  right:50%;
   transform: translate(-50%,-50%);
   z-index: 1;
 }
@@ -134,12 +134,12 @@ img {
   /* left 基準をリセットする　*/
     left: inherit;
     left: auto;
-    right: 40px;
+    left: 40px;
     transform: translateY(-50%);
    }
 
    .cover-title-primary span {
-     font-size: 72px;
+     font-size: 50px;
    }
 
    .cover-title-secondary span {
@@ -474,7 +474,7 @@ img {
  }
  .article-even {
    background-color: #edadad;
-   color: #ffffff
+   color: #ffffff;
  }
 
  .article-3 {
