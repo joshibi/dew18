@@ -358,6 +358,10 @@ content: "";
 
 @media screen and (min-width: 768px) {
   /* flexアイテムの方向を初期値(横向き)に指定しなおす */
+  .panel {
+   /* flexアイテムの方向を初期値（横向き）に指定しなおす */
+    flex-direction: row;
+  }
   .panel-item{
     /* 横組み時に幅がないので指定する */
     width: 50%;
@@ -384,7 +388,7 @@ content: "";
   font-size: 18px;
 }
 
-.article.index{
+.article .index{
 /* センター寄せにしたいのでブロック要素にする */
   display; block;
   text-align: center;
@@ -418,12 +422,17 @@ content: "";
 }
 /* 大きい方のコンテナ幅以上になった時に上書きするスタイル */
 @media screen and (min-width: 1280px) {
+  .article {
+    /* 数字の位置を決める基準点を作る */
+    position: relative;
+  }
+
 
   .artcle h3{
     font-size: 24px;
   }
 
-  .artcle .index{
+  .article .index{
     font-size: 40px;
     position: absolute; /* 位置を絶対配置にする */
     top: 60px;
@@ -438,7 +447,7 @@ content: "";
 
   .article-even .index {
     /* 中央を基準にして数字の位置を決める */
-    left: 50%;
+    right: 50%;
     /* 寄せたい方向にマイナス値の余白を入れる */
     margin-right: -600px;
   }
