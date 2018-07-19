@@ -388,9 +388,9 @@ content: "";
   font-size: 18px;
 }
 
-.article .index{
-/* センター寄せにしたいのでブロック要素にする */
-  display; block;
+.article .index {
+  /* センター寄せにしたいのでブロック要素にする */
+  display: block;
   text-align: center;
   font-size: 20px;
   font-weight: 600;
@@ -475,7 +475,7 @@ content: "";
 
 /* 画像を増やしたい場合は、別のクラス名をつけて別の画像を指定して、poster と一緒に使う */
 .poster-secondary {
-  background-image: url(../images/icon-offline.svg);
+  background-image: url(../images/cover-poster2.JPG);
 }
 
 /* word */
