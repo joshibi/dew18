@@ -451,12 +451,10 @@ margin-right: -600px;
     }
 
 @media screen and (min-width: 768px) {
-
 .poster {
   background-attachment: fixed;
 }
 }
-
 .poster-primary {
 background-image: url(../images/webudezatukau.jpg);
 }
@@ -473,7 +471,7 @@ background-image: url(../images/webudezatukau.jpg);
       padding-bottom: 40px;
     }
 
-.word-item-title h2{
+.word-item-title h2 {
   color: #eeeeee;
   font-size: 20px;
 }
@@ -487,9 +485,8 @@ background-image: url(../images/webudezatukau.jpg);
    margin-right: 20px;
 }
 
-.word-item-title h2 {
-     font-weight: 300;
-     font-size: 24px;
+.word-item-title {
+  margin-left: 0;
    }
 
 .word-item-description{
