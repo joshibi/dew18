@@ -145,17 +145,6 @@ img {
   height:100vh;
 }
 
-/* .hero の後ろに擬似要素で黒い矩形を作ってレイアウトする */
-/.hero:after {
-  background-color: #000000;
-  position: absolute;
-   width: 100%;
-  height: 50%;
-  bottom: 0;
-  left: 0;
-  /* 疑似要素の場合、content で要素を入れてあげないとボックスが作られない */
-  content: "";
-}
 
 .hero .container {
   /* アイコン、タイトルの位置基準にする */
@@ -269,9 +258,9 @@ img {
 
 /* lead */
 .lead {
-   background-color:#ff65a3;;
-   padding-top: 20px;
-   padding-bottom: 20px;
+   background-color:#ff65a3;
+   padding-top:20px;
+   padding-bottom:20px;
  }
 
  .lead p {
@@ -386,7 +375,7 @@ background-image: url(../images/guitar.jpg);
 .panel-item-content {
   padding-left: 80px;
   padding-right:80px;
-  jutify-content:center;
+  justify-content:center;
 }
 
 .panel-item-description p {
@@ -395,7 +384,6 @@ background-image: url(../images/guitar.jpg);
 
 .photo-caption {
  font-size: 14px;
-}
 }
 }
 
@@ -414,7 +402,7 @@ background-image: url(../images/guitar.jpg);
 display: block;
 color:#000000;
 text-align: center;
-font-size: :20px;
+font-size:20px;
 font-weight: 600;
 line-height: 1.4;
 }
@@ -435,13 +423,12 @@ line-height: 1.4;
 }
 
 .article-even{
-  background-size: 400px;
   background-color: #ff65a3;
   }
 
 @media screen and (min-width:768px){
 .article h3{
-font-size: 20px;
+  font-size: 20px;
 color: #000000;
 }
 }
@@ -463,6 +450,7 @@ position:absolute;
 top:60px;
 line-height:1;
 }
+
 .article-odd .index{
 left:50%;
 margin-left:-600px;
@@ -505,12 +493,16 @@ margin-right:-600px;
 .word{
 background-size: 400px;
 background-image: url(../images/hyogara.svg);
+background-color: #3a3a3a;
 color:#eeeeee;
 padding-top:40px;
 padding-bottom:40px;
 margin-top:120px;
-background-color: #ff65a3;
 top:30%;
+}
+
+.word-background{
+filter: brightness(170%);
 }
 
 .word-item-title h2 {
