@@ -101,9 +101,8 @@ img {
 
 .cover-title {
   position: absolute;
-  top:83%;
-  right:50%;
-  transform: translate(-50%,-50%);
+  bottom:17%;
+  left:10%;
   z-index: 1;
 }
 
@@ -135,7 +134,7 @@ img {
     left: inherit;
     left: auto;
     left: 40px;
-    transform: translateY(-50%);
+
    }
 
    .cover-title-primary span {
