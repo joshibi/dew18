@@ -62,7 +62,7 @@ img {
 
 /* cover */
 .cover {
-  background-color: ##86eaef;
+  background-color: #86eaef;
   height: 100vh;
   position: relative;
 }
@@ -352,10 +352,10 @@ background-image: url(../images/icon-offline.svg);
 width: 50%;
 order: unset;
 }
-}
+
 
 .panel-item:before {
-padding-top 100%
+padding-top 100%;
 }
 
 .panel-item-content {
@@ -366,11 +366,10 @@ justify-content: center;
 }
 
 .panel-item-description p {
-  font-size: 24px;
-}
-
+     font-size: 20px;
+   }
 .photo-caption{
-  font-size: 20px;
+  font-size: 14px;
 }
 
 }
